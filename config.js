@@ -8,8 +8,8 @@ window.SITE_CONFIG = {
   stripeConsultationLink: '',
 
   contactEmail: 'kontakt@voiceogdialog.dk',
-  contactPhone: '',
-  address: '',
+  contactPhone: '+45 28 28 87 58',
+  address: 'Richard Mortensens Vej 148, 2300 København S',
   cvr: '42307610',
 
   // Statistik (fx Plausible eller Google Analytics). Scriptet indlæses først efter samtykke.

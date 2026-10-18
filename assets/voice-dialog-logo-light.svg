@@ -1,17 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 200" role="img" aria-labelledby="title">
   <title id="title">Voice &amp; Dialog</title>
-  <desc id="desc">To overlappende silhuetter af hoveder med en lydlinje imellem dem.</desc>
-  <defs>
-    <path id="profile" d="M140 18C78 18 35 70 35 135c0 47 22 87 57 108v88h129v-63c17-9 32-24 42-43l-24-11 22-16-20-13 18-15-21-14 17-16-21-15 1-22C225 71 190 18 140 18Z"/>
-  </defs>
-  <g transform="translate(42 54)">
-    <use href="#profile" fill="#2E8A7E"/>
-    <use href="#profile" fill="#A7C75B" transform="translate(386 0) scale(-1 1)" opacity=".95"/>
-    <path fill="#F9FBF9" d="M193 96c-7 0-12 5-12 12v76c0 7 5 12 12 12s12-5 12-12v-76c0-7-5-12-12-12Zm-35 21c-7 0-12 5-12 12v34c0 7 5 12 12 12s12-5 12-12v-34c0-7-5-12-12-12Zm70 0c-7 0-12 5-12 12v34c0 7 5 12 12 12s12-5 12-12v-34c0-7-5-12-12-12Zm-105 19c-7 0-12 5-12 12v15c0 7 5 12 12 12s12-5 12-12v-15c0-7-5-12-12-12Zm140 0c-7 0-12 5-12 12v15c0 7 5 12 12 12s12-5 12-12v-15c0-7-5-12-12-12Z"/>
-  </g>
-  <g fill="#FFFFFF">
-    <text x="435" y="178" font-family="Georgia, Times New Roman, serif" font-size="93" font-weight="700" letter-spacing="0">Voice <tspan fill="#B6CA67">&amp;</tspan> Dialog</text>
-    <rect x="439" y="207" width="675" height="3" fill="#A7C75B"/>
-    <text x="440" y="258" font-family="Arial, Helvetica, sans-serif" font-size="30" letter-spacing="1.4" fill="#C9D9D3">DIN STEMME. VORES STØTTE.</text>
-  </g>
+  <defs><clipPath id="c"><circle cx="100" cy="100" r="100"/></clipPath><path id="f" d="M20 190 L22 98 C6 84 2 54 14 34 C26 12 54 6 68 18 C76 26 78 37 76 46 C80 52 85 57 87 61 C88 64 85 66 81 67 C83 70 83 73 80 75 C82 78 81 83 77 87 C72 92 64 93 59 98 L59 190 Z"/></defs>
+<circle cx="100" cy="100" r="100" fill="#E4EEE8"/>
+<g clip-path="url(#c)"><use href="#f" fill="#1F6D63" transform="translate(2 34) scale(.92)"/><use href="#f" fill="#B6CA67" transform="translate(198 34) scale(-.92 .92)"/>
+<g stroke="#1F6D63" stroke-width="6" stroke-linecap="round"><line x1="91" y1="92.4" x2="91" y2="104.4"/><line x1="100" y1="83.4" x2="100" y2="113.4"/><line x1="109" y1="92.4" x2="109" y2="104.4"/></g></g>
+  <text x="236" y="126" font-family="Georgia, 'Times New Roman', serif" font-size="78" fill="#FFFFFF">Voice <tspan font-style="italic" fill="#B6CA67">&amp;</tspan> Dialog</text>
 </svg>
