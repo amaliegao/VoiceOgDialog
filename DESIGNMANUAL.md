@@ -11,6 +11,8 @@
 
 - Primært logo: `assets/voice-dialog-logo.svg`
 - PNG-version: `assets/voice-dialog-logo.png`
+- Lys version til mørk baggrund: `assets/voice-dialog-logo-light.svg`
+- Symbol alene (header, favicon): `assets/voice-dialog-mark.svg`
 - Logoet viser to overlappende profiler og en lydlinje. Det signalerer stemme, dialog og menneskelig støtte.
 - Giv logoet luft. Brug det ikke mindre end ca. 200 px i bredde digitalt.
 - Brug som udgangspunkt logoet på en lys, rolig baggrund. På mørk baggrund skal en godkendt lys version bruges.
@@ -32,7 +34,7 @@
 
 ## Typografi
 
-- **Overskrifter:** Georgia, fallback `Times New Roman`, serif.
+- **Overskrifter:** Georgia, fallback `Times New Roman`, serif, i normal vægt (ikke fed).
   - Skaber faglig tyngde og ro.
 - **Brødtekst og navigation:** Arial, fallback Helvetica/sans-serif.
   - Sikrer enkel og letlæselig information.
@@ -41,11 +43,13 @@
 
 ## Layout og komponenter
 
-- Maksimal indholdsbreddde: **1.160 px**.
+- Maksimal indholdsbredde: **1.160 px**.
 - Standard luft omkring sektioner: **104 px** desktop, **72 px** mobil.
 - Sider bygges som rene fuldbredde bånd med et afgrænset indholdsområde.
 - Kort bruges kun til gentagne elementer som ydelser, priser og ekspertiseområder.
-- Knapper er rektangulære med let afrundede kanter, ikke pilleformede.
+- Knapper er rektangulære med let afrundede kanter (8 px), ikke pilleformede.
+- Kort og bokse har bløde hjørner (16 px), store billeder 24 px. Hero-billedet har en buet top.
+- Små ikoner er tynde stregikoner i primær grøn på lys grønlig flade.
 
 ## Knapper
 

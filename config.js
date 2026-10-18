@@ -1,8 +1,18 @@
-/* Udfyld disse oplysninger før hjemmesiden publiceres. Se README.md. */
+/*
+  Voice & Dialog: oplysninger, der vises på hjemmesiden.
+  Tomme felter ('') bliver automatisk skjult på siden.
+*/
 window.SITE_CONFIG = {
-  stripeMembershipLink: 'https://buy.stripe.com/REPLACE_MEMBERSHIP_LINK',
-  stripeConsultationLink: 'https://buy.stripe.com/REPLACE_CONSULTATION_LINK',
+  // Stripe Payment Links (https://buy.stripe.com/...). Lad stå tomme, indtil de er oprettet.
+  stripeMembershipLink: '',
+  stripeConsultationLink: '',
+
   contactEmail: 'kontakt@voiceogdialog.dk',
-  contactPhone: 'Telefon oplyses her',
-  cvr: 'CVR: 42307610'
+  contactPhone: '',
+  address: '',
+  cvr: '42307610',
+
+  // Statistik (fx Plausible eller Google Analytics). Scriptet indlæses først efter samtykke.
+  // Så længe feltet er tomt, viser cookiebanneret kun information og en OK-knap.
+  analyticsScript: ''
 };

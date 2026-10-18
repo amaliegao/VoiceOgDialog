@@ -1,22 +1,34 @@
 # Voice & Dialog
 
-Statisk første version af hjemmesiden. Åbn `index.html` lokalt eller brug en simpel webserver under udvikling.
+Statisk hjemmeside (HTML, CSS og JavaScript) på dansk. Den kræver ingen build: åbn `index.html` lokalt, eller kør `python3 -m http.server` i mappen og gå til http://localhost:8000.
 
-## Ejerens oplysninger før lancering
+Sitet udgives med GitHub Pages fra `main`-grenen. Se `GITHUB-PUBLISH.md`.
 
-1. Opret Stripe-konto og to sikre Payment Links: et årligt medlemskab på 1.000 kr. og en rådgivning på 500 kr.
-2. Indsæt de to Stripe-links i `config.js`. Betalingsknapperne åbner derefter Stripe Checkout; kortdata kommer aldrig gennem hjemmesiden.
-3. Indsæt korrekt e-mail, telefon og virksomhedsadresse i `config.js`, footer og `privatliv.html`. CVR er sat til `42307610`.
-4. Gennemgå medlemsvilkår, betalings-/opsigelsesvilkår og refundering. Link dem fra footer før betaling aktiveres.
-5. Færdiggør privatlivspolitikken: dataansvarlig, formål, behandlingsgrundlag, opbevaring, databehandlere, rettigheder og klagevejledning.
-6. Brug en sikker kanal til følsomme sagsoplysninger. En almindelig e-mailformular må ikke være den primære kanal til CPR-numre eller journalmateriale.
-7. Hvis analytics, Meta Pixel eller lignende tilføjes, må scriptet først indlæses efter et aktivt cookie-samtykke. Cookiebanneret er klar til valget, men der er bevidst ingen tracking-kode.
-8. Erstat `assets/hongmei-duan-placeholder.svg` med et godkendt portrætbillede af Hongmei Duan. Behold filnavnet, eller opdatér billedreferencerne i `index.html` og `hvem-er-vi.html`.
+## Indhold og opsætning
 
-## Betaling
+Alle oplysninger, der kan ændre sig, ligger i `config.js`:
 
-`config.js` starter med sikre pladsholdere. Indtil Stripe-links er indsat, viser knapperne en besked i stedet for at forsøge at tage imod betaling. Dette gør sitet klar til betaling uden at offentliggøre en Stripe-hemmelighed.
+| Felt | Betydning |
+| --- | --- |
+| `stripeMembershipLink` | Stripe Payment Link til årligt medlemskab (1.000 kr.) |
+| `stripeConsultationLink` | Stripe Payment Link til rådgivning (500 kr.), bruges ikke endnu |
+| `contactEmail`, `contactPhone`, `address`, `cvr` | Vises i kontaktfelter, footer og vilkår. Tomme felter skjules automatisk |
+| `analyticsScript` | URL til et statistikscript. Indlæses først efter samtykke i cookiebanneret |
 
-## Drift
+Så længe et Stripe-link er tomt, viser "Bliv medlem"-knappen en besked om, at online betaling åbner snart.
 
-Host sitet på fx Vercel, Netlify eller et almindeligt webhotel. Et eget domæne, HTTPS og en professionel e-mailadresse bør være klar inden lancering.
+## Filer
+
+- `index.html`, `hvem-er-vi.html`, `hvad-kan-vi-goere.html`, `priser.html`, `bliv-medlem.html`, `betingelser.html`, `privatliv.html`, `404.html`
+- `styles.css`: alt layout og design, se `DESIGNMANUAL.md`
+- `app.js`: menu, kontaktfelter, betalingsknap og cookiebanner
+- `assets/`: logoer (mørk, lys og symbol), favicon, portræt og billeder
+
+Header og footer er ens på alle sider. Ændres menuen, skal den rettes i alle HTML-filer.
+
+## Før lancering
+
+1. Opret Stripe Payment Link til medlemskab og indsæt det i `config.js`. Indsæt aldrig en Stripe secret key (`sk_...`) i repositoriet.
+2. Udfyld telefon og adresse i `config.js`, hvis de skal vises.
+3. Få handelsbetingelser og privatlivspolitik gennemlæst og godkendt.
+4. Opsæt e-mailen `kontakt@voiceogdialog.dk` og eventuelt eget domæne.
