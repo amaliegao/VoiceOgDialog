@@ -3,19 +3,16 @@
 ## Brand
 
 - **Navn:** Voice & Dialog
-- **Slogan:** Din stemme. Vores støtte.
 - **Position:** Faglig, menneskelig og rolig rådgivning til udenlandske fagpersoner i sundhedsvæsenet.
 - **Tone:** Klar, respektfuld, varm og professionel. Undgå aggressivt eller bureaukratisk sprog.
 
 ## Logo
 
-- Primært logo: `assets/voice-dialog-logo.svg`
-- PNG-version: `assets/voice-dialog-logo.png`
-- Lys version til mørk baggrund: `assets/voice-dialog-logo-light.svg`
-- Symbol alene (header, favicon): `assets/voice-dialog-mark.svg`
-- Logoet viser to overlappende profiler og en lydlinje. Det signalerer stemme, dialog og menneskelig støtte.
-- Giv logoet luft. Brug det ikke mindre end ca. 200 px i bredde digitalt.
-- Brug som udgangspunkt logoet på en lys, rolig baggrund. På mørk baggrund skal en godkendt lys version bruges.
+- Symbol: `assets/voice-dialog-mark.svg`. To profiler, der vender ansigtet mod hinanden, med en lydbølge imellem i en lys, grønlig cirkel. Det står for stemme, dialog og menneskelig støtte.
+- Logo med navn: `assets/voice-dialog-logo.svg` (mørk tekst) og `assets/voice-dialog-logo-light.svg` (hvid tekst til mørk baggrund). PNG: `assets/voice-dialog-logo.png`.
+- Navnet skrives i Georgia, normal vægt, med kursivt "&" i primær grøn (lime på mørk baggrund).
+- På hjemmesiden bruges symbolet sammen med navnet som tekst. Der bruges ingen tagline.
+- Symbolet bruges ikke mindre end 24 px. Giv logoet luft.
 
 ## Farver
 
