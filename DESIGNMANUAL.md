@@ -8,11 +8,12 @@
 
 ## Logo
 
-- Symbol: `assets/voice-dialog-mark.svg`. To profiler, der vender ansigtet mod hinanden, med en lydbølge imellem i en lys, grønlig cirkel. Det står for stemme, dialog og menneskelig støtte.
+- Symbol: `assets/voice-dialog-mark.svg`. To profiler, der kigger samme vej. Det mørkegrønne hoved står forrest og det lysegrønne bagved, begge i hel farve. En hvid lydbølge går på tværs af dem. Baggrunden er gennemsigtig.
+- Lys version af symbolet til mørk baggrund: `assets/voice-dialog-mark-light.svg` (forreste hoved i lysere grøn `#2E8A7E`).
 - Logo med navn: `assets/voice-dialog-logo.svg` (mørk tekst) og `assets/voice-dialog-logo-light.svg` (hvid tekst til mørk baggrund). PNG: `assets/voice-dialog-logo.png`.
 - Navnet skrives i Georgia, normal vægt, med kursivt "&" i primær grøn (lime på mørk baggrund).
-- På hjemmesiden bruges symbolet sammen med navnet som tekst. Der bruges ingen tagline.
-- Symbolet bruges ikke mindre end 24 px. Giv logoet luft.
+- Der bruges ingen tagline.
+- Symbolet bruges ikke lavere end ca. 24 px. Giv logoet luft.
 
 ## Farver
 
