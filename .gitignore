@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+._*
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Secrets and local config
+.env
+.env.*
+*.pem
+*.key
+
+# Dependencies and logs
+node_modules/
+*.log
+
+# Private working files
+inspirationt til hjemmeside.pdf

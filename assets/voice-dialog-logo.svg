@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
+  <title id="title">Voice &amp; Dialog</title>
+  <desc id="desc">To overlappende silhuetter af hoveder med en lydlinje imellem dem.</desc>
+  <defs>
+    <path id="profile" d="M140 18C78 18 35 70 35 135c0 47 22 87 57 108v88h129v-63c17-9 32-24 42-43l-24-11 22-16-20-13 18-15-21-14 17-16-21-15 1-22C225 71 190 18 140 18Z"/>
+  </defs>
+  <g transform="translate(42 54)">
+    <use href="#profile" fill="#1B625C"/>
+    <use href="#profile" fill="#A7C75B" transform="translate(386 0) scale(-1 1)" opacity=".95"/>
+    <path fill="#F9FBF9" d="M193 96c-7 0-12 5-12 12v76c0 7 5 12 12 12s12-5 12-12v-76c0-7-5-12-12-12Zm-35 21c-7 0-12 5-12 12v34c0 7 5 12 12 12s12-5 12-12v-34c0-7-5-12-12-12Zm70 0c-7 0-12 5-12 12v34c0 7 5 12 12 12s12-5 12-12v-34c0-7-5-12-12-12Zm-105 19c-7 0-12 5-12 12v15c0 7 5 12 12 12s12-5 12-12v-15c0-7-5-12-12-12Zm140 0c-7 0-12 5-12 12v15c0 7 5 12 12 12s12-5 12-12v-15c0-7-5-12-12-12Z"/>
+  </g>
+  <g fill="#143536">
+    <text x="435" y="178" font-family="Georgia, Times New Roman, serif" font-size="93" font-weight="700" letter-spacing="0">Voice <tspan fill="#1B625C">&amp;</tspan> Dialog</text>
+    <rect x="439" y="207" width="675" height="3" fill="#A7C75B"/>
+    <text x="440" y="258" font-family="Arial, Helvetica, sans-serif" font-size="30" letter-spacing="1.4" fill="#5A7470">DIN STEMME. VORES STØTTE.</text>
+  </g>
+</svg>
