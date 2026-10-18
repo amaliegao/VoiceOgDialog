@@ -3,48 +3,48 @@
   const $ = (selector, parent = document) => parent.querySelector(selector);
   const $$ = (selector, parent = document) => [...parent.querySelectorAll(selector)];
 
-  const footer = $('.site-footer');
-  if (footer && !footer.querySelector('.footer-grid')) {
-    footer.innerHTML = `
-      <div class="shell footer-grid">
-        <div class="brand footer-brand"><svg class="brand-mark" viewBox="0 0 74 56" aria-hidden="true"><path d="M37 4C21 4 8 14 8 28c0 8 4 15 11 20l-2 6 8-3c4 2 8 3 12 3 16 0 29-11 29-25S53 4 37 4Z" fill="#1f6d63"/><path d="M40 4c15 0 27 10 27 24 0 8-4 15-11 20l2 6-8-3c-4 2-8 3-12 3-15 0-28-11-28-25S24 4 40 4Z" fill="#b6ca67" opacity=".95"/><path d="M31 19v17M37 14v27M43 19v17M49 23v9M25 23v9" stroke="#fff" stroke-linecap="round" stroke-width="3"/></svg><span><strong>Voice <i>&</i> Dialog</strong><small>Din stemme. Vores støtte.</small></span></div>
-        <p>Faglig rådgivning og støtte til udenlandske fagpersoner i sundhedsvæsenet.</p>
-        <div class="footer-links"><strong>Navigation</strong><a href="hvem-er-vi.html">Hvem er vi?</a><a href="hvad-kan-vi-goere.html">Vores ekspertise</a><a href="priser.html">Priser</a><a href="bliv-medlem.html">Bliv medlem</a></div>
-        <div class="footer-links"><strong>Information</strong><a href="betingelser.html">Betingelser</a><a href="privatliv.html">Privatliv og cookies</a><a href="index.html#kontakt">Kontakt</a><button type="button" class="cookie-settings">Cookieindstillinger</button></div>
-      </div>
-      <div class="shell footer-bottom"><span>© <span id="year"></span> Voice & Dialog</span><span class="cvr-text">CVR: 42307610</span><span>Danmark</span></div>`;
-  }
+  /* Kontaktoplysninger fra config.js. Tomme felter skjules. */
+  const fields = {
+    email: config.contactEmail,
+    phone: config.contactPhone,
+    address: config.address,
+    cvr: config.cvr ? `CVR ${config.cvr}` : ''
+  };
+  $$('[data-field]').forEach((element) => {
+    const value = fields[element.dataset.field];
+    const wrapper = element.closest('[data-field-wrap]') || element;
+    if (!value) { wrapper.hidden = true; return; }
+    element.textContent = value;
+    if (element.tagName === 'A' && element.dataset.field === 'email') element.href = `mailto:${value}`;
+    if (element.tagName === 'A' && element.dataset.field === 'phone') element.href = `tel:${value.replace(/[^\d+]/g, '')}`;
+  });
+  $$('a[data-mailto]').forEach((link) => { if (config.contactEmail) link.href = `mailto:${config.contactEmail}`; });
+  $$('[data-year]').forEach((element) => { element.textContent = new Date().getFullYear(); });
 
-  const year = $('#year');
-  if (year) year.textContent = new Date().getFullYear();
-  $$('.contact-email-text').forEach((element) => { element.textContent = config.contactEmail || element.textContent; });
-  $$('.contact-phone-text').forEach((element) => { element.textContent = config.contactPhone || element.textContent; });
-  const cvr = $('.cvr-text');
-  if (cvr) cvr.textContent = config.cvr || cvr.textContent;
-  const contactEmail = $('.contact-email');
-  if (config.contactEmail && contactEmail) contactEmail.href = `mailto:${config.contactEmail}`;
-
+  /* Mobilmenu */
   const menuToggle = $('.menu-toggle');
   const nav = $('#site-nav');
+  function setMenu(open) {
+    nav.classList.toggle('is-open', open);
+    menuToggle.setAttribute('aria-expanded', String(open));
+    menuToggle.setAttribute('aria-label', open ? 'Luk menu' : 'Åbn menu');
+  }
   if (menuToggle && nav) {
-    menuToggle.addEventListener('click', () => {
-      const open = nav.classList.toggle('is-open');
-      menuToggle.setAttribute('aria-expanded', String(open));
-      menuToggle.setAttribute('aria-label', open ? 'Luk menu' : 'Åbn menu');
-    });
-    $$('#site-nav a').forEach((link) => link.addEventListener('click', () => {
-      nav.classList.remove('is-open');
-      menuToggle.setAttribute('aria-expanded', 'false');
-    }));
+    menuToggle.addEventListener('click', () => setMenu(!nav.classList.contains('is-open')));
+    $$('a', nav).forEach((link) => link.addEventListener('click', () => setMenu(false)));
+    document.addEventListener('keydown', (event) => { if (event.key === 'Escape') setMenu(false); });
   }
 
+  /* Betaling: kun knapper med data-payment åbner Stripe. */
+  const paymentLinks = { membership: config.stripeMembershipLink, consultation: config.stripeConsultationLink };
   const paymentDialog = $('#payment-dialog');
-  const usablePaymentLink = (link) => /^https:\/\/buy\.stripe\.com\//.test(link || '') && !link.includes('REPLACE_');
-  $$('.payment-button, .inline-payment').forEach((button) => {
-    button.addEventListener('click', () => {
-      const link = button.dataset.payment === 'membership' ? config.stripeMembershipLink : config.stripeConsultationLink;
-      if (usablePaymentLink(link)) window.location.assign(link);
-      else if (paymentDialog) paymentDialog.showModal();
+  const isStripeLink = (link) => /^https:\/\/buy\.stripe\.com\/\S+$/.test(link || '');
+  $$('[data-payment]').forEach((button) => {
+    button.addEventListener('click', (event) => {
+      const link = paymentLinks[button.dataset.payment];
+      if (isStripeLink(link)) { window.location.assign(link); return; }
+      event.preventDefault();
+      if (paymentDialog) paymentDialog.showModal();
     });
   });
   if (paymentDialog) {
@@ -52,21 +52,57 @@
     paymentDialog.addEventListener('click', (event) => { if (event.target === paymentDialog) paymentDialog.close(); });
   }
 
-  let cookieBanner = $('#cookie-banner');
-  if (!cookieBanner) {
-    document.body.insertAdjacentHTML('beforeend', `
-      <section class="cookie-banner" id="cookie-banner" aria-label="Cookievalg" hidden>
-        <div><h2>Cookies</h2><p>Vi bruger kun nødvendige cookies, indtil du giver tilladelse til statistik. Du kan ændre dit valg når som helst.</p><a href="privatliv.html">Læs om cookies</a></div>
-        <div class="cookie-actions"><button class="button button-quiet" type="button" data-cookie-choice="necessary">Kun nødvendige</button><button class="button button-primary" type="button" data-cookie-choice="all">Acceptér statistik</button></div>
-      </section>`);
-    cookieBanner = $('#cookie-banner');
+  /* Cookies. Valget gemmes i 12 måneder og kan ændres via "Cookieindstillinger". */
+  const cookieKey = 'vd-cookie-consent';
+  const consentVersion = 1;
+  const maxAge = 365 * 24 * 60 * 60 * 1000;
+  const hasAnalytics = Boolean(config.analyticsScript);
+
+  function readConsent() {
+    try {
+      const saved = JSON.parse(localStorage.getItem(cookieKey));
+      if (saved && saved.version === consentVersion && Date.now() - saved.time < maxAge) return saved;
+    } catch (error) { /* ugyldigt eller blokeret lager */ }
+    return null;
   }
-  const cookieKey = 'voice-dialog-cookie-choice';
-  function showCookieBanner() { if (cookieBanner) cookieBanner.hidden = false; }
-  if (cookieBanner && !localStorage.getItem(cookieKey)) showCookieBanner();
-  $$('[data-cookie-choice]').forEach((button) => button.addEventListener('click', () => {
-    localStorage.setItem(cookieKey, button.dataset.cookieChoice);
-    if (cookieBanner) cookieBanner.hidden = true;
+  function saveConsent(statistics) {
+    try { localStorage.setItem(cookieKey, JSON.stringify({ version: consentVersion, statistics, time: Date.now() })); } catch (error) { /* ignoreres */ }
+  }
+  function loadAnalytics() {
+    if (!hasAnalytics || $('script[data-analytics]')) return;
+    const script = document.createElement('script');
+    script.src = config.analyticsScript;
+    script.defer = true;
+    script.dataset.analytics = '';
+    document.head.appendChild(script);
+  }
+
+  const text = hasAnalytics
+    ? 'Vi bruger nødvendige cookies, så siden virker. Med dit samtykke bruger vi også statistikcookies til at forbedre siden. Du kan altid ændre dit valg.'
+    : 'Vi bruger ingen statistik- eller marketingcookies. Siden gemmer kun dit cookievalg i din browser.';
+  const actions = hasAnalytics
+    ? '<button class="button button-outline" type="button" data-consent="false">Kun nødvendige</button><button class="button button-primary" type="button" data-consent="true">Acceptér alle</button>'
+    : '<button class="button button-primary" type="button" data-consent="false">OK, forstået</button>';
+  document.body.insertAdjacentHTML('beforeend', `
+    <section class="cookie-banner" id="cookie-banner" role="region" aria-labelledby="cookie-title" hidden>
+      <h2 id="cookie-title">Cookies</h2>
+      <p>${text} <a href="privatliv.html#cookies">Læs mere</a></p>
+      <div class="cookie-actions">${actions}</div>
+    </section>`);
+  const banner = $('#cookie-banner');
+  const consent = readConsent();
+  if (consent && consent.statistics) loadAnalytics();
+  if (!consent) banner.hidden = false;
+
+  $$('[data-consent]', banner).forEach((button) => button.addEventListener('click', () => {
+    const statistics = button.dataset.consent === 'true';
+    saveConsent(statistics);
+    banner.hidden = true;
+    if (statistics) loadAnalytics();
+    else if ($('script[data-analytics]')) window.location.reload();
   }));
-  $$('.cookie-settings').forEach((button) => button.addEventListener('click', showCookieBanner));
+  $$('.cookie-settings').forEach((button) => button.addEventListener('click', () => {
+    banner.hidden = false;
+    $('button', banner).focus();
+  }));
 })();

@@ -1,4 +1,141 @@
 <!doctype html>
-<html lang="da"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="description" content="Bliv medlem af Voice & Dialog og få faglig sparring året rundt." /><title>Bliv medlem | Voice & Dialog</title><link rel="stylesheet" href="styles.css" /></head>
-<body><a class="skip-link" href="#indhold">Spring til indhold</a><header class="site-header"><div class="shell header-inner"><a class="brand" href="index.html" aria-label="Voice & Dialog, forside"><svg class="brand-mark" viewBox="0 0 74 56" aria-hidden="true"><path d="M37 4C21 4 8 14 8 28c0 8 4 15 11 20l-2 6 8-3c4 2 8 3 12 3 16 0 29-11 29-25S53 4 37 4Z" fill="#1f6d63"/><path d="M40 4c15 0 27 10 27 24 0 8-4 15-11 20l2 6-8-3c-4 2-8 3-12 3-15 0-28-11-28-25S24 4 40 4Z" fill="#b6ca67" opacity=".95"/><path d="M31 19v17M37 14v27M43 19v17M49 23v9M25 23v9" stroke="#fff" stroke-linecap="round" stroke-width="3"/></svg><span><strong>Voice <i>&</i> Dialog</strong><small>Din stemme. Vores støtte.</small></span></a><button class="menu-toggle" type="button" aria-label="Åbn menu" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button><nav class="site-nav" id="site-nav" aria-label="Hovedmenu"><a href="hvem-er-vi.html">Hvem er vi?</a><a href="hvad-kan-vi-goere.html">Vores ekspertise</a><a href="priser.html">Priser</a><a class="nav-cta" href="bliv-medlem.html">Bliv medlem</a></nav></div></header>
-<main id="indhold"><section class="page-hero"><div class="shell"><p class="eyebrow">Bliv medlem</p><h1>Få en erfaren faglig sparringspartner ved din side.</h1><p>Et medlemskab er til dig, der ønsker nem adgang til rådgivning og bedre vilkår, hvis en sag udvikler sig.</p></div></section><section class="page-content"><div class="shell page-grid"><article><h2>Dit medlemskab inkluderer</h2><div class="detail-cards"><section class="detail-card"><h3>6 rådgivninger</h3><p>Seks telefoniske rådgivninger á 20 minutter i medlemsperioden. Brug dem, når du har brug for et fagligt perspektiv eller hjælp til næste skridt.</p></section><section class="detail-card"><h3>20 % rabat</h3><p>Rabat på individuel sagsbehandling, når sagen kræver mere end en kort rådgivning.</p></section><section class="detail-card"><h3>Fortrolig sparring</h3><p>Et roligt rum til at afklare dine muligheder, forberede vigtige samtaler og få struktur på din situation.</p></section><section class="detail-card"><h3>1.000 kr. om året</h3><p>Kontingent betales årligt via sikker Stripe Checkout, når betalingslinket er aktiveret.</p></section></div><h2>Hvem passer medlemskabet til?</h2><p>Medlemskabet passer til udenlandske fagpersoner i sundhedsvæsenet, der ønsker en fast rådgivningsmulighed. Det kan også være relevant, hvis du står i en situation, der endnu ikke er en konkret sag, men hvor du har brug for afklaring.</p><h2>Sådan bliver du medlem</h2><ol class="detail-list"><li>Læs medlems- og betalingsvilkårene, når de er offentliggjort.</li><li>Vælg “Bliv medlem” og gennemfør betalingen via Stripe.</li><li>Du modtager en bekræftelse og information om, hvordan du booker rådgivning.</li></ol><p class="notice">Medlemsportal og login anbefales, når medlemsantallet vokser. Indtil da kan medlemskab og rådgivning administreres sikkert via Stripe, en medlemsliste og professionel e-mail.</p></article><aside class="page-aside"><p class="eyebrow">Årligt medlemskab</p><h2>1.000 kr. / år</h2><p>Sikker betaling via Stripe. Betalingslinket er klar til at blive indsat af ejeren.</p><button class="button button-primary payment-button" type="button" data-payment="membership">Bliv medlem</button><a class="text-link" style="display:block;margin-top:1rem" href="priser.html">Se priser <span>→</span></a></aside></div></section></main><footer class="site-footer"><div class="shell footer-grid"><div class="footer-brand"><img class="footer-logo" src="assets/voice-dialog-logo.svg" alt="Voice & Dialog" /></div><p>Faglig rådgivning og støtte til udenlandske fagpersoner i sundhedsvæsenet.</p><div class="footer-links"><strong>Navigation</strong><a href="hvem-er-vi.html">Hvem er vi?</a><a href="hvad-kan-vi-goere.html">Vores ekspertise</a><a href="priser.html">Priser</a><a href="bliv-medlem.html">Bliv medlem</a></div><div class="footer-links"><strong>Information</strong><a href="betingelser.html">Betingelser</a><a href="privatliv.html">Privatliv og cookies</a><a href="index.html#kontakt">Kontakt</a><button type="button" class="cookie-settings">Cookieindstillinger</button></div></div><div class="shell footer-bottom"><span>© <span id="year"></span> Voice & Dialog</span><span class="cvr-text">CVR: 42307610</span><span>Danmark</span></div></footer><dialog class="payment-dialog" id="payment-dialog" aria-labelledby="payment-dialog-title"><button class="dialog-close" type="button" aria-label="Luk">×</button><p class="eyebrow">Klar til betaling</p><h2 id="payment-dialog-title">Betalingslink mangler</h2><p>Betalingen åbner her, når ejerens sikre Stripe Payment Link er indsat i <code>config.js</code>.</p><a class="button button-primary" href="index.html#kontakt">Kontakt Voice & Dialog</a></dialog><script src="config.js"></script><script src="app.js"></script></body></html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bliv medlem | Voice &amp; Dialog</title>
+    <meta name="description" content="Bliv medlem af Voice &amp; Dialog for 1.000 kr. om året og få seks rådgivninger og rabat på sagsbehandling." />
+    <meta name="theme-color" content="#124b45" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="da_DK" />
+    <meta property="og:site_name" content="Voice &amp; Dialog" />
+    <meta property="og:title" content="Bliv medlem | Voice &amp; Dialog" />
+    <meta property="og:description" content="Bliv medlem af Voice &amp; Dialog for 1.000 kr. om året og få seks rådgivninger og rabat på sagsbehandling." />
+    <meta property="og:url" content="https://amaliegao.github.io/VoiceOgDialog/bliv-medlem.html" />
+    <meta property="og:image" content="https://amaliegao.github.io/VoiceOgDialog/assets/og-image.jpg" />
+    <link rel="icon" href="assets/voice-dialog-mark.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#indhold">Spring til indhold</a>
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="brand" href="index.html" aria-label="Voice &amp; Dialog, forside">
+          <img src="assets/voice-dialog-mark.svg" alt="" width="46" height="46" />
+          <span><span class="brand-name">Voice <i>&amp;</i> Dialog</span><span class="brand-tagline">Din stemme. Vores støtte.</span></span>
+        </a>
+        <button class="menu-toggle" type="button" aria-label="Åbn menu" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
+        <nav class="site-nav" id="site-nav" aria-label="Hovedmenu">
+          <a href="hvem-er-vi.html">Hvem er vi?</a><a href="hvad-kan-vi-goere.html">Vores ekspertise</a><a href="priser.html">Priser</a>
+          <a class="nav-cta" href="bliv-medlem.html" aria-current="page">Bliv medlem</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="indhold">
+      <section class="page-hero">
+        <div class="shell">
+          <p class="eyebrow">Bliv medlem</p>
+          <h1>Få en erfaren faglig sparringspartner ved din side.</h1>
+          <p class="lead">Et medlemskab er til dig, der ønsker nem adgang til rådgivning og bedre vilkår, hvis en sag udvikler sig.</p>
+        </div>
+      </section>
+
+      <section class="page-content">
+        <div class="shell page-grid">
+          <article class="prose">
+            <h2>Dit medlemskab inkluderer</h2>
+            <div class="card-grid cols-2">
+              <article class="card">
+                <div class="icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></div>
+                <h3>6 rådgivninger</h3>
+                <p>Seks telefoniske rådgivninger à 20 minutter i medlemsperioden. Brug dem, når du har brug for et fagligt perspektiv eller hjælp til næste skridt.</p>
+              </article>
+              <article class="card">
+                <div class="icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 5L5 19"/><circle cx="7" cy="7" r="2.5"/><circle cx="17" cy="17" r="2.5"/></svg></div>
+                <h3>20 % rabat</h3>
+                <p>Rabat på individuel sagsbehandling, når sagen kræver mere end en kort rådgivning.</p>
+              </article>
+              <article class="card">
+                <div class="icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+                <h3>Fortrolig sparring</h3>
+                <p>Et roligt rum til at afklare dine muligheder, forberede vigtige samtaler og få struktur på din situation.</p>
+              </article>
+              <article class="card">
+                <div class="icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg></div>
+                <h3>1.000 kr. om året</h3>
+                <p>Kontingentet betales årligt med kort via Stripe, en sikker betalingsløsning.</p>
+              </article>
+            </div>
+
+            <h2>Hvem passer medlemskabet til?</h2>
+            <p>Medlemskabet passer til udenlandske fagpersoner i sundhedsvæsenet, der ønsker en fast rådgivningsmulighed. Det kan også være relevant, hvis du står i en situation, der endnu ikke er en konkret sag, men hvor du har brug for afklaring.</p>
+
+            <h2>Sådan bliver du medlem</h2>
+            <ol class="steps light stacked">
+              <li><h3>Læs betingelserne</h3><p>Se hvad medlemskabet omfatter i vores <a href="betingelser.html">handelsbetingelser</a>.</p></li>
+              <li><h3>Betal sikkert</h3><p>Vælg “Bliv medlem” og gennemfør betalingen via Stripe.</p></li>
+              <li><h3>Kom i gang</h3><p>Du modtager en bekræftelse og information om, hvordan du booker din første rådgivning.</p></li>
+            </ol>
+          </article>
+          <aside class="aside-card">
+            <p class="eyebrow">Årligt medlemskab</p>
+            <p class="price">1.000 kr. <small>/ år</small></p>
+            <ul class="checklist" style="margin:0 0 1.5rem">
+              <li>6 rådgivninger à 20 min.</li>
+              <li>20 % rabat på sagsbehandling</li>
+              <li>Fortrolig sparring</li>
+            </ul>
+            <a class="button button-primary" href="#" data-payment="membership">Bliv medlem</a>
+            <hr />
+            <p class="small"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg> Sikker betaling via Stripe. Vi ser aldrig dine kortoplysninger.</p>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <div>
+          <img class="footer-logo" src="assets/voice-dialog-logo-light.svg" alt="Voice &amp; Dialog. Din stemme. Vores støtte." width="240" height="84" />
+          <p>Faglig rådgivning og støtte til udenlandske fagpersoner i det danske sundhedsvæsen.</p>
+        </div>
+        <div class="footer-col">
+          <h2>Sider</h2>
+          <ul>
+            <li><a href="hvem-er-vi.html">Hvem er vi?</a></li>
+            <li><a href="hvad-kan-vi-goere.html">Vores ekspertise</a></li>
+            <li><a href="priser.html">Priser</a></li>
+            <li><a href="bliv-medlem.html">Bliv medlem</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h2>Kontakt og vilkår</h2>
+          <ul>
+            <li data-field-wrap><a data-field="email" href="mailto:kontakt@voiceogdialog.dk">kontakt@voiceogdialog.dk</a></li>
+            <li data-field-wrap><a data-field="phone" href="#"></a></li>
+            <li><a href="betingelser.html">Handelsbetingelser</a></li>
+            <li><a href="privatliv.html">Privatlivspolitik</a></li>
+            <li><button type="button" class="cookie-settings">Cookieindstillinger</button></li>
+          </ul>
+        </div>
+      </div>
+      <div class="shell footer-bottom">
+        <span>© <span data-year>2026</span> Voice &amp; Dialog</span>
+        <span data-field="cvr">CVR 42307610</span>
+        <span data-field="address"></span>
+      </div>
+    </footer>
+    <dialog class="payment-dialog" id="payment-dialog" aria-labelledby="payment-dialog-title">
+      <button class="dialog-close" type="button" aria-label="Luk">×</button>
+      <p class="eyebrow">Medlemskab</p>
+      <h2 id="payment-dialog-title">Online betaling åbner snart</h2>
+      <p>Vi er ved at gøre online betaling klar. Skriv til os, så hjælper vi dig med at blive medlem.</p>
+      <a class="button button-primary" data-mailto href="mailto:kontakt@voiceogdialog.dk">Skriv til os</a>
+    </dialog>
+
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
